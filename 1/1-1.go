@@ -36,8 +36,6 @@ func main() {
 		right_int, _ := strconv.Atoi(strings.Fields(line)[1])
 		left = append(left, left_int)
 		right = append(right, right_int)
-		fmt.Println(left)
-		fmt.Println(right)
 	}
 	sort.Ints(left)
 	sort.Ints(right)
