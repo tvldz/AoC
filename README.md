@@ -1,2 +1,2 @@
-# AoC24
-AoC 2024
+# Advent of Code
+As long as I feel like it
