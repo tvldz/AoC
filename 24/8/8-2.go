@@ -27,11 +27,8 @@ func main() {
 		runes := []rune(line)
 		matrix = append(matrix, runes)
 	}
-	fmt.Println(matrix)
 	height := len(matrix[0]) - 1
 	width := len(matrix) - 1
-	fmt.Printf("height: %d\n", height)
-	fmt.Printf("width: %d\n", width)
 
 	antennas := make(map[rune][]location)
 	antinodeLocations := make(map[location]int)
@@ -43,7 +40,6 @@ func main() {
 			}
 		}
 	}
-	fmt.Println(antennas)
 	for frequency, locations := range antennas {
 		for location1Index, location1 := range locations {
 			for location2Index, location2 := range locations {
@@ -57,14 +53,11 @@ func main() {
 					prevAntinode := location2
 					antinodeLocations[prevAntinode] = 1
 					for antinode.row <= height && antinode.column <= width && antinode.row >= 0 && antinode.column >= 0 {
-						fmt.Printf("%c Pair: %d-%d\n", frequency, location1, location2)
-						fmt.Printf("Opposite: %d\n", antinode)
 						antinodeLocations[antinode] = 1
 						antinodeX = 2*antinode.column - prevAntinode.column
 						antinodeY = 2*antinode.row - prevAntinode.row
 						prevAntinode = antinode
 						antinode = location{column: antinodeX, row: antinodeY}
-						fmt.Printf("Antinode: %d\n", antinode)
 					}
 				}
 			}
