@@ -56,6 +56,7 @@ func main() {
 			for j := 0; j < len(inputFile); j++ {
 				if inputFile[j] == -1 {
 					inputFile[j], inputFile[i] = inputFile[i], inputFile[j]
+					break
 				}
 			}
 		}
