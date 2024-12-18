@@ -29,12 +29,12 @@ func combo(operand int, registers map[string]int) int {
 
 func main() {
 	registers := map[string]int{
-		"A": 62769524,
+		"A": 0,
 		"B": 0,
 		"C": 0,
 	}
 
-	str := "2,4,1,7,7,5,0,3,4,0,1,7,5,5,3,0"
+	str := "0,0,0,0,0" //instructions
 	var instructions []int
 	nums := strings.Split(str, ",")
 	for _, numStr := range nums {
